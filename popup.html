@@ -11,9 +11,12 @@
   <div class="container">
     <header>
       <h1>Speed Controller</h1>
+      <div class="current-speed">
+        Current: <span id="currentSpeedDisplay">1.00x</span>
+      </div>
     </header>
     
-    <div class="speed-grid">
+    <div class="speed-grid" id="speedGrid">
       <button class="speed-btn" data-speed="0.25">0.25x</button>
       <button class="speed-btn" data-speed="0.5">0.5x</button>
       <button class="speed-btn" data-speed="0.75">0.75x</button>
@@ -26,15 +29,43 @@
       <button class="speed-btn" data-speed="2.5">2.5x</button>
       <button class="speed-btn" data-speed="2.75">2.75x</button>
       <button class="speed-btn" data-speed="3.0">3.0x</button>
-      <button class="speed-btn" data-speed="3.25">3.25x</button>
       <button class="speed-btn" data-speed="3.5">3.5x</button>
-      <button class="speed-btn" data-speed="3.75">3.75x</button>
       <button class="speed-btn" data-speed="4.0">4.0x</button>
+      <button class="speed-btn" data-speed="6.0">6.0x</button>
+      <button class="speed-btn" data-speed="8.0">8.0x</button>
     </div>
 
     <div class="custom-speed">
       <input type="number" id="customSpeed" placeholder="Custom" step="0.1" min="0.1" max="16">
       <button id="setCustom">Set</button>
+    </div>
+
+    <div class="options-row">
+      <label class="checkbox-label">
+        <input type="checkbox" id="preservePitch" checked>
+        <span>Preserve pitch</span>
+      </label>
+      <button id="themeToggle" class="icon-btn" title="Toggle theme">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+    
+    <div class="shortcuts">
+      <div class="shortcuts-header">Keyboard Shortcuts</div>
+      <div class="shortcuts-grid">
+        <kbd>[</kbd><span>Decrease</span>
+        <kbd>]</kbd><span>Increase</span>
+        <kbd>=</kbd><span>Reset</span>
+        <kbd>,</kbd><span>-5s</span>
+        <kbd>.</kbd><span>+5s</span>
+      </div>
+    </div>
+    
+    <div class="site-memory">
+      <label>
+        <input type="checkbox" id="rememberSite">
+        <span>Remember speed for this site</span>
+      </label>
     </div>
     
     <div class="status-message" id="statusMessage"></div>

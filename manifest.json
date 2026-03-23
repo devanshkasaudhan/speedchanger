@@ -5,7 +5,8 @@
   "description": "Minimal video speed changer for any website.",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "content_scripts": [
     {
